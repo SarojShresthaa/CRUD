@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CRUD_Razor.Pages.Categories
 {
+    [BindProperties ]
+
     public class CreateModel : PageModel
     {
         private readonly ApplicationDbContext _db;
@@ -17,6 +19,18 @@ namespace CRUD_Razor.Pages.Categories
         }
         public void OnGet()
         {
+        }
+
+        public IActionResult OnPost()
+        {
+         
+                 _db.Categories.AddAsync(Category);
+                 _db.SaveChangesAsync();
+            TempData["success"] = "Category created successfully";
+
+            return RedirectToPage("Index");
+            
+        
         }
     }
 }
