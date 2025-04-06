@@ -1,7 +1,7 @@
 ﻿using CRUD.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CRUD.Data
+namespace CRUD.DataAccess.Data
 {
     public class ApplicationDbContext: DbContext
     {

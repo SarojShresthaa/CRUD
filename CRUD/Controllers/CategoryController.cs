@@ -1,4 +1,5 @@
-﻿using CRUD.Data;
+﻿
+using CRUD.DataAccess.Data;
 using CRUD.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
