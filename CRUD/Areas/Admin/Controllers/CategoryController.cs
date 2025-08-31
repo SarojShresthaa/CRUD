@@ -1,12 +1,12 @@
-﻿
-using CRUD.DataAccess.Data;
+﻿using CRUD.DataAccess.Data;
 using CRUD.DataAccess.Repository.IRepository;
 using CRUD.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace CRUD.Controllers
+namespace CRUD.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -95,7 +95,7 @@ namespace CRUD.Controllers
         public IActionResult DeletePost(int id)
         {
 
-            Category obj = _unitOfWork.Category.Get((int)id);
+            Category obj = _unitOfWork.Category.Get(id);
 
             if (obj == null)
             {
